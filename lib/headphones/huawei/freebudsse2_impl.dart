@@ -57,7 +57,7 @@ final class HuaweiFreeBudsSE2Impl extends HuaweiFreeBudsSE2 {
     );
     _initRequestInfo();
     _watchdogStreamSub =
-        Stream.periodic(const Duration(seconds: 3)).listen((_) {
+        Stream.periodic(const Duration(seconds: 30)).listen((_) {
       _initRequestInfo();
     });
   }

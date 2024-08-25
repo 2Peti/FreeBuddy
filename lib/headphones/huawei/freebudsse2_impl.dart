@@ -58,14 +58,7 @@ final class HuaweiFreeBudsSE2Impl extends HuaweiFreeBudsSE2 {
     _initRequestInfo();
     _watchdogStreamSub =
         Stream.periodic(const Duration(seconds: 3)).listen((_) {
-      if ([
-        batteryLevel.valueOrNull,
-        // no alias because it's okay to be null 👍
-        lrcBattery.valueOrNull,
-        settings.valueOrNull,
-      ].any((e) => e == null)) {
-        _initRequestInfo();
-      }
+      _initRequestInfo();
     });
   }
 
